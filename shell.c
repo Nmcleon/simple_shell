@@ -28,7 +28,6 @@ void readCommand(Command *command) {
 void executeBuiltInCommand(Command *command) {
     if (strcmp(command->command, "cd") == 0) {
         /* Change directory implementation */
-        // ...
     }
     /* Add other built-in commands here */
 }
@@ -56,7 +55,7 @@ void executeExternalCommand(Command *command) {
 
 void freeCommand(Command *command) {
     /* Free command resources implementation */
-    // ...
+    
     (void)command; /* Silence unused parameter warning */
 }
 
