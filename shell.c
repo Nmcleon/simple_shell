@@ -9,11 +9,11 @@
 
 void readCommand(Command *command) {
     char input[MAX_COMMAND_LENGTH];
+    char *token; // Declare token before any other statements
     printf("Enter a command: ");
     fgets(input, sizeof(input), stdin);
     input[strcspn(input, "\n")] = '\0';  /* Remove trailing newline character */
 
-    char *token;
     token = strtok(input, " ");
     command->num_arguments = 0;
 
@@ -34,10 +34,11 @@ void executeBuiltInCommand(Command *command) {
 
 void executeExternalCommand(Command *command) {
     pid_t pid = fork();
+    int i; // Declare i before the for loop
     if (pid == 0) {
         char *args[MAX_ARGUMENTS + 2];
         args[0] = command->command;
-        for (int i = 0; i < command->num_arguments; i++) {
+        for (i = 0; i < command->num_arguments; i++) {
             args[i + 1] = command->arguments[i];
         }
         args[command->num_arguments + 1] = NULL;
@@ -52,6 +53,7 @@ void executeExternalCommand(Command *command) {
         waitpid(pid, &status, 0);
     }
 }
+
 
 void freeCommand(Command *command) {
     /* Free command resources implementation */
