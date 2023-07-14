@@ -93,8 +93,8 @@ void handle_cd(char **args) {
 }
 
 void handle_alias(char **args) {
-    // Handle the alias functionality
-    // Not implemented in this example
+    /* Handle the alias functionality*/
+    /* Not implemented in this example*/
 }
 
 void handle_logical_operators(char **args, int *result) {
@@ -102,11 +102,11 @@ void handle_logical_operators(char **args, int *result) {
     while (args[i] != NULL) {
         if (strcmp(args[i], "&&") == 0) {
             if (*result != 0) {
-                return;  // Skip commands after && if the previous command failed
+                return;  /* Skip commands after && if the previous command failed*/
             }
         } else if (strcmp(args[i], "||") == 0) {
             if (*result == 0) {
-                return;  // Skip commands after || if the previous command succeeded
+                return;  /* Skip commands after || if the previous command succeeded*/
             }
         } else {
             char *trimmed_token = strtok(args[i], " \t\n");
@@ -152,7 +152,7 @@ void handle_redirection(char **args) {
                     dup2(input_fd, STDIN_FILENO);
                     close(input_fd);
                     args[i] = NULL;
-                    i++;  // Skip the file name
+                    i++;  /* Skip the file name*/
                 }
             } else {
                 fprintf(stderr, "Invalid usage of input redirection\n");
@@ -167,7 +167,7 @@ void handle_redirection(char **args) {
                     dup2(output_fd, STDOUT_FILENO);
                     close(output_fd);
                     args[i] = NULL;
-                    i++;  // Skip the file name
+                    i++;  /* Skip the file name*/
                 }
             } else {
                 fprintf(stderr, "Invalid usage of output redirection\n");
@@ -182,7 +182,7 @@ void handle_redirection(char **args) {
                     dup2(output_fd, STDOUT_FILENO);
                     close(output_fd);
                     args[i] = NULL;
-                    i++;  // Skip the file name
+                    i++;  /* Skip the file name*/
                 }
             } else {
                 fprintf(stderr, "Invalid usage of output redirection\n");
