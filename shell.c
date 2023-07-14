@@ -8,12 +8,13 @@
 #include "shell.h"
 
 void readCommand(Command *command) {
+    char input[MAX_COMMAND_LENGTH];
     printf("Enter a command: ");
-    fgets(command->command, sizeof(command->command), stdin);
-    command->command[strcspn(command->command, "\n")] = '\0';  /* Remove trailing newline character */
+    fgets(input, sizeof(input), stdin);
+    input[strcspn(input, "\n")] = '\0';  /* Remove trailing newline character */
 
     char *token;
-    token = strtok(command->command, " ");
+    token = strtok(input, " ");
     command->num_arguments = 0;
 
     while (token != NULL && command->num_arguments < MAX_ARGUMENTS) {
@@ -21,6 +22,7 @@ void readCommand(Command *command) {
         command->num_arguments++;
         token = strtok(NULL, " ");
     }
+    strcpy(command->command, command->arguments[0]);
 }
 
 void executeBuiltInCommand(Command *command) {
@@ -58,7 +60,7 @@ void freeCommand(Command *command) {
     (void)command; /* Silence unused parameter warning */
 }
 
-void shell_loop() {
+int main() {
     Command command;
 
     while (1) {
@@ -82,4 +84,6 @@ void shell_loop() {
     }
 
     freeCommand(&command);
+
+    return 0;
 }
