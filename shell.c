@@ -10,20 +10,22 @@
 void readCommand(Command *command) {
     printf("Enter a command: ");
     fgets(command->command, sizeof(command->command), stdin);
-    command->command[strcspn(command->command, "\n")] = '\0';  // Remove trailing newline character
+    command->command[strcspn(command->command, "\n")] = '\0';  /* Remove trailing newline character */
 
-    char *token = strtok(command->command, " ");
+    char *token;
+    token = strtok(command->command, " ");
     command->num_arguments = 0;
 
     while (token != NULL && command->num_arguments < MAX_ARGUMENTS) {
-        strcpy(command->arguments[command->num_arguments++], token);
+        strcpy(command->arguments[command->num_arguments], token);
+        command->num_arguments++;
         token = strtok(NULL, " ");
     }
 }
 
 void executeBuiltInCommand(Command *command) {
     if (strcmp(command->command, "cd") == 0) {
-        // Change directory implementation
+        /* Change directory implementation */
         // ...
     }
     /* Add other built-in commands here */
@@ -51,9 +53,9 @@ void executeExternalCommand(Command *command) {
 }
 
 void freeCommand(Command *command) {
-    // Free command resources implementation
+    /* Free command resources implementation */
     // ...
-    (void)command; // Silence unused parameter warning
+    (void)command; /* Silence unused parameter warning */
 }
 
 void shell_loop() {
