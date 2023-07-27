@@ -25,8 +25,8 @@ return (args);
 }
 /**
 * tokenize_string - function splits the command line input into tokens
-* @lines:
-* Return:
+* @lines: tokenized string
+* Return: null(success)
 */
 char **tokenize_string(char *lines)
 {
