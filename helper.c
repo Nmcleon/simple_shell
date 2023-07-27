@@ -14,9 +14,9 @@ return (i);
 }
 /**
 * string_compare - compares two strings.
-* @scp1:
-* @scp2:
-* Return:
+* @scp1: first string to compare
+* @scp2: second string
+* Return: sc - sc2
 */
 int string_compare(char *scp1, char *scp2)
 {
@@ -32,8 +32,8 @@ else
 }
 /**
 * string_duplicate - duplicates the source string
-* @sd:
-* Return:
+* @sd: string duplicate
+* Return: duplicate
 */
 char *string_duplicate(char *sd)
 {
@@ -56,9 +56,9 @@ return (duplicate);
 }
 /**
 * string_concatenate - concatenates the source string to the destination string
-* @scn:
-* @sd:
-* Return:
+* @scn: string concatenate
+* @sd: string duplicate
+* Return: scn
 */
 char *string_concatenate(char *scn, char *sd)
 {
