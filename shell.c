@@ -12,12 +12,12 @@ void display_environment(char **environment, char **arguments)
 /* Implementation for displaying environment variables*/
 }
 /**
-* Process a single command.
-* @prog:
-* @line:
-* @environment:
-* Return:
-*/
+ * Process a single command.
+ * @prog: Pointer to the name of the shell program.
+ * @line: Pointer to the user input line.
+ * @environment: Pointer to the environment variables.
+ * Return: Exit code of the command.
+ */
 int process_command(char *prog, char *line, char **environment)
 {
 	char **arguments = tokenize_string(line);
@@ -46,12 +46,12 @@ int process_command(char *prog, char *line, char **environment)
 	return (exit_code);
 }
 /**
-* Main function for the shell.
-* @argc:
-* @argv:
-* @environment:
-* Return: Exit code (success)
-*/
+ * Main function for the shell.
+ * @argc: Argument count.
+ * @argv: Argument vector.
+ * @environment: Environment variables.
+ * Return: Exit code (success).
+ */
 int main(__attribute__((unused)) int argc, char **argv, char **environment)
 {
 	char *line = NULL;
