@@ -1,0 +1,79 @@
+.TH "SIMPLE SHELL" "1" "NOVEMBER 2018" "SIMPLE SHELL" "Simple Shell User Manual"
+.SH NAME
+.B hsh
+- simple shell
+.SH SYNOPSIS
+.B
+custom command line interpreter built as a project for Holberton School
+
+command [options] [file]
+.SH DESCRIPTION
+.B simple shell
+is a custom version of a command language interpreter that executes
+commands read from the standard input or from a file.
+.SH INVOCATION
+.IP
+.PP
+.nf
+hsh can be invoked in interactive or non-interactive mode
+
+In interactive mode, you can type commands from the keyboard:
+./hsh
+/bin/ls
+
+
+In non-interactive mode, you can pipe commands into the program using echo
+or cat:
+
+Non-interactive:
+$ echo "/bin/ls" | ./hsh
+
+.SH BUILTIN COMMANDS
+.B env
+
+prints the environment
+.SH SYNTAX
+.IP
+.PP
+.nf
+
+To execute the shell:
+
+./hsh
+
+You can use the same syntax for running commands in other shells:
+
+<command> <flags or options> <argument 1> <argument 2> ...
+
+In non-interactive mode:
+
+<command> | ./hsh
+
+.SH EXAMPLE
+.IP
+.PP
+.NF
+
+Interactive mode:
+
+/bin/ls
+
+Non-interactive mode:
+
+echo "/bin/ls" | ./hsh
+
+.IP
+
+.SH RETURN
+
+The program returns 0 for success.
+
+.SH BUGS
+Memory leaks and exit does not work
+
+.SH AUTHOR
+Michael Klein and Wendy Leung
+
+.SH "SEE ALSO"
+.BR sh (1),
+.BR bash (1)
