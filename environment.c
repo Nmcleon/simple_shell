@@ -1,40 +1,36 @@
 #include "main.h"
 
 /**
- * length - get length of a path
- * @path: point to path
- * Return: length of path
+  * length - the function name
+  * @path: parameter of type char *.
+  * Return: int .
  */
-
 int length(char *path)
 {
-	int i, count;
-
-	count = 0;
-	while (path[i] != '\0')
+int i, count;
+count = 0;
+while (path[i] != '\0')
 	{
-		if (path[i] == '=' || path[i] == ':')
-			count++;
-		i++;
+if (path[i] == ' = ' || path[i] == ':')
+	count++;
+i++;
 	}
-	return (count);
+return (count);
 }
 
 /**
- * _environment - environment built-in print environment
- * @environment: point to environment variable
- * @arguments: point to arguments
- * Return: null
+  * display_environmentt - the function name
+  * @environment: parameter of type char **.
+  * @arguments: parameter of type char **.
+  * Return: void .
  */
-
 void display_environmentt(char **environment, char **arguments)
 {
-	int i;
-
-	for (i = 0; environment[i] != NULL; i++)
+int i;
+for (i = 0; environment[i] != NULL; i++)
 	{
-		_puts(environment[i]);
-		_putchar('\n');
+_puts(environment[i]);
+_putchar('\n');
 	}
-	free(arguments);
+free(arguments);
 }
