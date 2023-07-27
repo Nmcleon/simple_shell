@@ -3,7 +3,7 @@
 #define _EOF (-1)
 
 /**
-* Display the environment variables.
+* display_environment: environment variables.
 * @environment: Pointer to the environment variables.
 * @arguments: Pointer to the command arguments.
 */
@@ -11,8 +11,9 @@ void display_environment(char **environment, char **arguments)
 {
 /* Implementation for displaying environment variables*/
 }
+
 /**
- * Process a single command.
+ * process_command:process single command
  * @prog: Pointer to the name of the shell program.
  * @line: Pointer to the user input line.
  * @environment: Pointer to the environment variables.
@@ -45,8 +46,9 @@ int process_command(char *prog, char *line, char **environment)
 	}
 	return (exit_code);
 }
+
 /**
- * Main function for the shell.
+ * main: function for shell.
  * @argc: Argument count.
  * @argv: Argument vector.
  * @environment: Environment variables.
