@@ -21,9 +21,9 @@ free(arguments);
 }
 /**
 * main - Main function for the main shell
-* @argc:
-* @argv:
-* @environment:
+* @argc: argument count
+* @argv: argument vctor
+* @environment: environment
 * Return: Exit (success)
 */
 int main(__attribute__((unused)) int argc, char **argv, char **environment)
